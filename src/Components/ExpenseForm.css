@@ -1,0 +1,12 @@
+.expense-form{
+    width: auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: green;
+    color: white;
+}
+.form-title{
+    display: block;
+}
