@@ -4,21 +4,21 @@
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
-    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
     border: 1px solid black;
     border-radius: 12px;
 }
-.expenses-td{
+/* .expenses-td{
     width: 250px;
-}
+} */
 .price-btn{
-    width: 140px;
+    width: 100px;
     height: 50px;
     background-color: green;
     color: white;
     border: 2px solid white;
     border-radius: 12px;
     font-size: 20px;
-    margin-top: 20px;
-    margin-left: 300px;
 }
