@@ -5,7 +5,7 @@ export default function ExpenseForm() {
 
     const [userTitle, setUserTitle] = useState("")
     const [userAmount, setUserAmount] = useState("")
-    const [useDate, setUserDate] = useState("")
+    const [userDate, setUserDate] = useState("")
 
     function updateUserTitle(event){
         setUserTitle(event.target.value)
@@ -19,19 +19,33 @@ export default function ExpenseForm() {
         setUserDate(event.target.value)
     }
 
+    function addNewExpense(event){
+        event.preventDefault()
+        const myObj = {
+            Title : userTitle,
+            Amount : userAmount,
+            Date : new Date(userDate)
+        }
+        console.log(myObj)
+        setUserTitle("")
+        setUserAmount("")
+        setUserDate("")
+        
+    }
+
     return (
-        <form className="expense-form" action="#">
+        <form onSubmit={addNewExpense} className="expense-form" action="#">
             <div className="form-title">
                 <label htmlFor="#">Title</label><br />
-                <input type="text" onChange={updateUserTitle}/>
+                <input type="text" value={userTitle} onChange={updateUserTitle}/>
             </div>
             <div className="form-amount">
                 <label htmlFor="#">Amount</label><br />
-                <input type="number" onChange={updateUserAmount}/>
+                <input type="number" value={userAmount} onChange={updateUserAmount}/>
             </div>
             <div className="form-date">
                 <label htmlFor="#">Date</label><br />
-                <input type="date" onChange={updateUserDate}/>
+                <input type="date" value={userDate} onChange={updateUserDate}/>
             </div>
             <div>
                 <button className="form-add-btn">
