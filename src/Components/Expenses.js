@@ -7,7 +7,7 @@ export default function Expenses(props) {
   const [title, setTitle] = useState(props.title)
 
   function updateSetTitle(){
-    setTitle("Updated Title")
+    setTitle("Enter Title")
   }
   return (
     <div>
