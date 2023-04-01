@@ -1,9 +1,10 @@
 import expenseItems from "./ExpenseItems";
 import Expenses from "./Expenses";
 
-export default function ExpensesFinal() {
+export default function ExpensesFinal(props) {
   return (
     <div>
+      
       <Expenses
         date={expenseItems[0].date}
         title={expenseItems[0].title}
