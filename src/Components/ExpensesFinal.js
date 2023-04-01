@@ -1,11 +1,17 @@
 import expenseItems from "./ExpenseItems";
 import Expenses from "./Expenses";
 
-export default function ExpensesFinal(props) {
+export default function ExpensesFinal() {
   return (
     <div>
-      
-      <Expenses
+      {expenseItems.map((expenses) => (
+        <Expenses
+          title={expenses.title}
+          price={expenses.price}
+          date={expenses.date}
+        />
+      ))}
+      {/* <Expenses
         date={expenseItems[0].date}
         title={expenseItems[0].title}
         price={expenseItems[0].price}
@@ -27,7 +33,7 @@ export default function ExpensesFinal(props) {
         date={expenseItems[3].date}
         title={expenseItems[3].title}
         price={expenseItems[3].price}
-      />
+      /> */}
       <br />
     </div>
   );

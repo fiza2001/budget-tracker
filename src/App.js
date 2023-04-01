@@ -1,8 +1,8 @@
 import "./App.css";
-// import ExpensesFinal from "./Components/ExpensesFinal"
 import NewExpense from "./Components/NewExpense.js"
-import expenseItems from "./Components/ExpenseItems";
-import Expenses from "./Components/Expenses";
+// import expenseItems from "./Components/ExpenseItems";
+// import Expenses from "./Components/Expenses";
+import ExpensesFinal from "./Components/ExpensesFinal";
 
 
 
@@ -20,9 +20,7 @@ function App(props) {
       <br />
       <NewExpense onAddExpense={addExpenseHandler}/>
       <br />
-      {expenseItems.map((expenses) => (
-        <Expenses title={expenses.title} price={expenses.price} date={expenses.date} />
-      ))}
+      <ExpensesFinal />
     </div>
   );
 }
