@@ -1,10 +1,10 @@
 import expenseItems from "./ExpenseItems";
 import Expenses from "./Expenses";
 
-export default function ExpensesFinal() {
+export default function ExpensesFinal(props) {
   return (
     <div>
-      {expenseItems.map((expenses) => (
+      {props.items.map((expenses) => (
         <Expenses
           title={expenses.title}
           price={expenses.price}
