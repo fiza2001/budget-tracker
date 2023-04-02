@@ -1,7 +1,7 @@
 import "./Expenses.css";
 import ExpenseDate from "./ExpenseDate";
 import { useState } from "react";
-import ExpenseFilter from "./ExpenseFilter.js"
+// import ExpenseFilter from "./ExpenseFilter.js"
 
 export default function Expenses(props) {
 
@@ -11,15 +11,15 @@ export default function Expenses(props) {
     setTitle("Enter Title")
   }
 
-  const [filteredYear, setFilteredYear] = useState("2021")
+  // const [filteredYear, setFilteredYear] = useState("2021")
 
-  function handleDropdown(selectedYear){
-    setFilteredYear(selectedYear)
-  }
+  // function handleDropdown(selectedYear){
+  //   setFilteredYear(selectedYear)
+  // }
 
   return (
     <div>
-      <ExpenseFilter selected={filteredYear} onChangeExpense={handleDropdown}/>
+      {/* <ExpenseFilter selected={filteredYear} onChangeExpense={handleDropdown}/> */}
       <div className="expenses-div">
         <ExpenseDate date={props.date} />
         <div className="expenses-td">

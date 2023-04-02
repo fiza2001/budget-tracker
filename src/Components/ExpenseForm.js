@@ -34,7 +34,7 @@ export default function ExpenseForm(props) {
     }
 
     return (
-        <form onSubmit={addNewExpense} className="expense-form" action="#">
+        <form className="expense-form" action="#">
             <div className="form-title">
                 <label htmlFor="#">Title</label><br />
                 <input type="text" value={userTitle} onChange={updateUserTitle}/>
@@ -48,7 +48,7 @@ export default function ExpenseForm(props) {
                 <input type="date" value={userDate} onChange={updateUserDate}/>
             </div>
             <div>
-                <button className="form-add-btn">
+                <button onClick={addNewExpense} type="submit" className="form-add-btn">
                     Add..
                 </button>
             </div>

@@ -1,15 +1,20 @@
-import expenseItems from "./ExpenseItems";
+import { useState } from "react";
+// import expenseItems from "./ExpenseItems";
 import Expenses from "./Expenses";
+import ExpenseFilter from "./ExpenseFilter.js";
 
 export default function ExpensesFinal(props) {
+  const [filteredYear, setFilteredYear] = useState("2021");
+
+  function handleDropdown(selectedYear) {
+    setFilteredYear(selectedYear);
+  }
+
   return (
     <div>
-      {props.items.map((expenses) => (
-        <Expenses
-          title={expenses.title}
-          price={expenses.price}
-          date={expenses.date}
-        />
+      <ExpenseFilter selected={filteredYear} onChangeExpense={handleDropdown} />
+      {props.items.map((added) => (
+        <Expenses title={added.title} price={added.price} date={added.date} />
       ))}
       {/* <Expenses
         date={expenseItems[0].date}
