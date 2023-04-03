@@ -1,7 +1,14 @@
+body{
+    margin: 0;
+}
 .app-div{
-    background-color: pink;
+    background-image: url("exp-1.jpg");
+    height: auto;
     overflow: hidden;
 }
 h1{
     text-align: center;
+    color: rgba(255, 255, 0, 0.836);
+    font-family: 'Lora', serif;
+    letter-spacing: 3px;
 }

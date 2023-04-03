@@ -1,10 +1,10 @@
 .expense-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background: rgb(236, 247, 237, 0.3);
   }
   
   .expense-item__description {
@@ -15,6 +15,7 @@
     flex-flow: column-reverse;
     justify-content: flex-start;
     flex: 1;
+
   }
   
   .expense-item h2 {
@@ -22,20 +23,19 @@
     font-size: 1rem;
     flex: 1;
     margin: 0 1rem;
-    color: white;
   }
   
   .expense-item__price {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #40005d;
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
-  }
+  } 
   
-  @media (min-width: 580px) {
+  @media screen and (min-width: 580px) {
     .expense-item__description {
       flex-direction: row;
       align-items: center;
@@ -44,11 +44,20 @@
     }
   
     .expense-item__description h2 {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
     }
   
     .expense-item__price {
       font-size: 1.25rem;
       padding: 0.5rem 1.5rem;
     }
+  }
+
+  @media screen and (max-width: 728px) {
+    .expense-item__description{
+      display: flex;
+flex-direction: row;
+      justify-content: center;
+    }
+    
   }

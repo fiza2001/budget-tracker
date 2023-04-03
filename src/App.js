@@ -27,7 +27,25 @@ const hardCodedExpenses = [
     id: "5",
     title: 'School Fee',
     amount: 12000,
-    date: new Date(2023, 3, 22)
+    date: new Date(2023, 2, 22)
+  },
+  {
+    id: "6",
+    title: 'Chairs',
+    amount: 200,
+    date: new Date(2021, 12, 22)
+  },
+  {
+    id: "7",
+    title: 'Dish Washer',
+    amount: 2000,
+    date: new Date(2021, 5, 2)
+  },
+  {
+    id: "8",
+    title: 'Dining table',
+    amount: 4000,
+    date: new Date(2021, 8, 12)
   }
 ];
 
