@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NewExpense from './Components/NewExpense';
 import Expenses from './Components/Expenses.js';
+import "./App.css"
 
 const hardCodedExpenses = [
   {
@@ -42,7 +43,8 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className="app-div">
+      <h1>Budget Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
