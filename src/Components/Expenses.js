@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Card from './Card.js';
+import "./Expenses.css"
 import ExpensesFilter from './ExpensesFilter.js';
 import ExpensesList from './ExpensesList.js';
 import ExpensesChart from './ExpensesChart.js';
 
 export default function Expenses(props) {
-  const [filteredYear, setFilteredYear] = useState('2020');
+  const [filteredYear, setFilteredYear] = useState('2023');
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
