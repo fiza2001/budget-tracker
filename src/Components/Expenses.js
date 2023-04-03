@@ -1,37 +1,33 @@
-import "./Expenses.css";
-import ExpenseDate from "./ExpenseDate";
-import { useState } from "react";
-// import ExpenseFilter from "./ExpenseFilter.js"
+import React, { useState } from "react";
+import Card from './Card.js';
+import ExpensesFilter from './ExpensesFilter.js';
+import ExpensesList from './ExpensesList.js';
+import ExpensesChart from './ExpensesChart.js';
 
 export default function Expenses(props) {
+  const [filteredYear, setFilteredYear] = useState('2020');
 
-  const [title, setTitle] = useState(props.title)
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
 
-  function updateSetTitle(){
-    setTitle("Enter Title")
-  }
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
 
-  // const [filteredYear, setFilteredYear] = useState("2021")
-
-  // function handleDropdown(selectedYear){
-  //   setFilteredYear(selectedYear)
-  // }
-
-  return (
+ return (
     <div>
-      {/* <ExpenseFilter selected={filteredYear} onChangeExpense={handleDropdown}/> */}
-      <div className="expenses-div">
-        <ExpenseDate date={props.date} />
-        <div className="expenses-td">
-          <h1 className="title-name">{title}</h1>
-        </div>
-        <div>
-          <button className="price-btn">
-            <b>{props.price} $</b>
-          </button>
-        </div>
-        <button onClick={updateSetTitle}>Change Title</button>
-      </div>
+      <Card className='expenses'>
+        <ExpensesFilter
+          selected={filteredYear}
+          onChangeFilter={filterChangeHandler}
+        />
+        <ExpensesChart expenses={filteredExpenses} />
+        <ExpensesList items={filteredExpenses} />
+      </Card>
     </div>
   );
+
+    
 }
+

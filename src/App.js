@@ -1,37 +1,45 @@
 import React, { useState } from "react";
-import "./App.css";
-import NewExpense from "./Components/NewExpense.js"
-// import Expenses from "./Components/Expenses";
-import ExpensesFinal from "./Components/ExpensesFinal";
+import NewExpense from './Components/NewExpense';
+import Expenses from './Components/Expenses.js';
 
-const hardcodeExpenses = [
-  { id: "1", date: new Date(), title: "car tools", price: 110 },
-  { id: "2", date: new Date(), title: "groceries", price: 80 },
-  { id: "3", date: new Date(), title: "school fee", price: 6110 },
-  { id: "4", date: new Date(), title: "decor", price: 210 },
+const hardCodedExpenses = [
+  {
+    id: 'e1',
+    title: 'Toilet Paper',
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: 'e3',
+    title: 'Car Insurance',
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: 'e4',
+    title: 'New Desk (Wooden)',
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
 ];
 
 
-function App() {
+export default function App() {
 
-  const [expenses, setExpenses] = useState(hardcodeExpenses)
+  const [expenses, setExpenses] = useState(hardCodedExpenses);
 
-  function addExpenseHandler(expense){
-    setExpenses((prev) => {
-      return [expense, ...prev]
-    })
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+  };
 
-  }
   return (
-    <div className="App">
-      <h1>Budget Tracker</h1>
-      <br />
-      <br />
-      <NewExpense onAddExpense={addExpenseHandler}/>
-      <br />
-      <ExpensesFinal items={expenses}/>
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
-}
-
-export default App;
+  
+};
